@@ -34,3 +34,11 @@ function bubbleSortWithDoLoop(arr = []) {
 
   return arr;
 }
+
+function recursiveBubbleSort(arr, n = arr.length) {
+  if (n < 2) return arr;
+  for (let j = 0; j < n - 1; j++) {
+    if (arr[j] > arr[j + 1]) [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+  }
+  return recursiveBubbleSort(arr, n - 1);
+}
